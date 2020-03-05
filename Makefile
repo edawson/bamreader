@@ -18,7 +18,7 @@ install: all
 	mv ./bamreader ${INSTALL_DIR}/bin/
 
 bamreader: bamreader.o gzstream.o ReadGroup.o Histogram.o
-	$(CXX) -L $(BTLIB) $(PROFILE) -o bamreader Histogram.o ReadGroup.o bamreader.o gzstream.o -lbamtools -lbamtools-utils
+	$(CXX) -L $(BTLIB) $(PROFILE) -o bamreader Histogram.o ReadGroup.o bamreader.o gzstream.o -lbamtools -lbamtools-utils -lz
 
 bamreader.o: bamreader.cpp
 	$(CXX) $(CXXFLAGS) bamreader.cpp
