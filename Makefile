@@ -4,6 +4,8 @@ BTROOT ?= /n/data1/hms/dbmi/park/jluquette/meerkat_bwa_mem/Meerkat/src/mybamtool
 BTINC = $(BTROOT)/src
 BTLIB = $(BTROOT)/lib
 
+INSTALL_DIR ?= /usr
+
 PROFILE = #-pg
 
 # Use this for debugging
@@ -11,6 +13,9 @@ PROFILE = #-pg
 CXXFLAGS = -c -O3 -I $(BTINC)
 
 all: bamreader
+
+install:
+	mv ./bamreader ${INSTALL_DIR}/bin/
 
 bamreader: bamreader.o gzstream.o ReadGroup.o Histogram.o
 	$(CXX) -L $(BTLIB) $(PROFILE) -o bamreader Histogram.o ReadGroup.o bamreader.o gzstream.o -lbamtools -lbamtools-utils
