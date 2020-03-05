@@ -1,6 +1,6 @@
-CXX = g++
+CXX ?= g++
 
-BTROOT = /n/data1/hms/dbmi/park/jluquette/meerkat_bwa_mem/Meerkat/src/mybamtools
+BTROOT ?= /n/data1/hms/dbmi/park/jluquette/meerkat_bwa_mem/Meerkat/src/mybamtools
 BTINC = $(BTROOT)/src
 BTLIB = $(BTROOT)/lib
 
