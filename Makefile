@@ -14,7 +14,7 @@ CXXFLAGS = -c -O3 -I $(BTINC)
 
 all: bamreader
 
-install:
+install: all
 	mv ./bamreader ${INSTALL_DIR}/bin/
 
 bamreader: bamreader.o gzstream.o ReadGroup.o Histogram.o
